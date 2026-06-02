@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnHub</title>
+<style>
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ body { font-family: Arial, sans-serif; color: #222; }
+ 
+ /* NAV */
+ nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 40px;
+ border-bottom: 1px solid #ddd;
+ background: #fff;
+ }
+ .logo { font-size: 22px; font-weight: bold; color: #1a56db; }
+ .nav-links { display: flex; gap: 24px; list-style: none; }
+ .nav-links a { text-decoration: none; color: #444; font-size: 15px; }
+ .nav-links a:hover { color: #1a56db; }
+ .nav-btn {
+ background: #1a56db;
+ color: #fff;
+ padding: 9px 20px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-size: 15px;
+ }
+ 
+ /* HERO */
+ .hero {
+ background: #f0f5ff;
+ text-align: center;
+ padding: 80px 20px;
+ }
+ .hero h1 { font-size: 42px; color: #111; margin-bottom: 16px; }
+ .hero p { font-size: 18px; color: #555; margin-bottom: 36px; }
+ .search-bar {
+ display: flex;
+ justify-content: center;
+ gap: 0;
+ max-width: 520px;
+ margin: 0 auto;
+ }
+ .search-bar input {
+ flex: 1;
+ padding: 14px 18px;
+ font-size: 15px;
+ border: 1px solid #ccc;
+ border-right: none;
+ border-radius: 6px 0 0 6px;
+ outline: none;
+ }
+ .search-bar button {
+ background: #1a56db;
+ color: #fff;
+ padding: 14px 24px;
+ font-size: 15px;
+ border: none;
+ border-radius: 0 6px 6px 0;
+ cursor: pointer;
+ }
+ 
+ /* STATS */
+ .stats {
+ display: flex;
+ justify-content: center;
+ gap: 60px;
+ padding: 40px 20px;
+ background: #fff;
+ border-bottom: 1px solid #eee;
+ }
+ .stat { text-align: center; }
+ .stat strong { display: block; font-size: 28px; color: #1a56db; }
+ .stat span { font-size: 14px; color: #666; }
+ 
+ /* CATEGORIES */
+ .section { padding: 60px 40px; max-width: 1100px; margin: 0 auto; }
+ .section h2 { font-size: 28px; margin-bottom: 28px; }
+ .categories {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+ gap: 16px;
+ }
+ .cat-card {
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ padding: 24px 16px;
+ text-align: center;
+ cursor: pointer;
+ background: #fff;
+ transition: box-shadow .2s;
+ }
+ .cat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+ .cat-card .icon { font-size: 32px; margin-bottom: 10px; }
+ .cat-card .name { font-size: 14px; font-weight: 600; color: #222; }
+ .cat-card .count { font-size: 12px; color: #888; margin-top: 4px; }
+ 
+ /* COURSES */
+ .courses-section { background: #f9f9f9; padding: 60px 40px; }
+ .courses-inner { max-width: 1100px; margin: 0 auto; }
+ .courses-inner h2 { font-size: 28px; margin-bottom: 28px; }
+ .courses {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 20px;
+ }
+ .course-card {
+ background: #fff;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ overflow: hidden;
+ }
+ .course-thumb {
+ height: 140px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 48px;
+ background: #eef2ff;
+ }
+ .course-body { padding: 16px; }
+ .course-cat { font-size: 12px; color: #1a56db; font-weight: 600; margin-bottom: 6px; }
+ .course-title { font-size: 16px; font-weight: 600; color: #111; margin-bottom: 6px; }
+ .course-by { font-size: 13px; color: #888; margin-bottom: 12px; }
+ .course-footer {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-top: 1px solid #eee;
+ padding-top: 12px;
+ }
+ .course-price { font-size: 18px; font-weight: bold; color: #111; }
+ .course-price .old { font-size: 13px; color: #aaa; text-decoration: line-through; margin-left: 6px; font-weight: normal; }
+ .course-btn {
+ background: #1a56db;
+ color: #fff;
+ border: none;
+ padding: 8px 16px;
+ border-radius: 6px;
+ font-size: 13px;
+ cursor: pointer;
+ }
+ 
+ /* FOOTER */
+ footer {
+ background: #111;
+ color: #aaa;
+ text-align: center;
+ padding: 28px 20px;
+ font-size: 14px;
+ }
+ footer a { color: #aaa; text-decoration: none; margin: 0 12px; }
+ footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+ <div class="logo">LearnHub</div>
+ <ul class="nav-links">
+ <li><a href="#">Courses</a></li>
+ <li><a href="#">Categories</a></li>
+ <li><a href="#">Instructors</a></li>
+ <li><a href="#">Pricing</a></li>
+ </ul>
+ <a href="#" class="nav-btn">Sign Up Free</a>
+</nav>
+ 
+<!-- HERO -->
+<div class="hero">
+ <h1>Learn New Skills Online</h1>
+ <p>Find expert-led courses in tech, design, business, and more.</p>
+ <div class="search-bar">
+ <input type="text" placeholder="Search for a course..." id="searchInput">
+ <button onclick="alert('Search: ' + document.getElementById('searchInput').value)">Search</button>
+ </div>
+</div>
+ 
+<!-- STATS -->
+<div class="stats">
+ <div class="stat"><strong>12,000+</strong><span>Courses</span></div>
+ <div class="stat"><strong>850K+</strong><span>Students</span></div>
+ <div class="stat"><strong>1,200+</strong><span>Instructors</span></div>
+ <div class="stat"><strong>96%</strong><span>Satisfaction</span></div>
+</div>
+ 
+<!-- CATEGORIES -->
+<div class="section">
+ <h2>Browse Categories</h2>
+ <div class="categories">
+ <div class="cat-card"><div class="icon">💻</div><div class="name">Web Development</div><div class="count">2,340 courses</div></div>
+ <div class="cat-card"><div class="icon">📊</div><div class="name">Data Science</div><div class="count">1,180 courses</div></div>
+ <div class="cat-card"><div class="icon">🎨</div><div class="name">UI/UX Design</div><div class="count">980 courses</div></div>
+ <div class="cat-card"><div class="icon">📱</div><div class="name">Mobile Apps</div><div class="count">760 courses</div></div>
+ <div class="cat-card"><div class="icon">📈</div><div class="name">Business</div><div class="count">1,450 courses</div></div>
+ <div class="cat-card"><div class="icon">🤖</div><div class="name">AI & ML</div><div class="count">840 courses</div></div>
+ </div>
+</div>
+ 
+<!-- COURSES -->
+<div class="courses-section">
+ <div class="courses-inner">
+ <h2>Featured Courses</h2>
+ <div class="courses">
+ 
+ <div class="course-card">
+ <div class="course-thumb">💻</div>
+ <div class="course-body">
+ <div class="course-cat">Web Development</div>
+ <div class="course-title">Full-Stack Developer Bootcamp</div>
+ <div class="course-by">by Sarah Mitchell</div>
+ <div class="course-footer">
+ <div class="course-price">Nrs5000 <span class="old">Nrs10000</span></div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="course-card">
+ <div class="course-thumb" style="background:#e1f5ee">🤖</div>
+ <div class="course-body">
+ <div class="course-cat">AI & Machine Learning</div>
+ <div class="course-title">Machine Learning with Python</div>
+ <div class="course-by">by James Okafor</div>
+ <div class="course-footer">
+ <div class="course-price">Nrs6500 <span class="old">Nrs12000</span></div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="course-card">
+ <div class="course-thumb" style="background:#faece7">🎨</div>
+ <div class="course-body">
+ <div class="course-cat">UI/UX Design</div>
+ <div class="course-title">UI/UX Design Masterclass</div>
+ <div class="course-by">by Priya Nair</div>
+ <div class="course-footer">
+ <div class="course-price">Nrs3500 <span class="old">Nrs7500</span></div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="course-card">
+ <div class="course-thumb" style="background:#e6f1fb">📊</div>
+ <div class="course-body">
+ <div class="course-cat">Data Science</div>
+ <div class="course-title">Data Analysis with Python</div>
+ <div class="course-by">by Chen Wei</div>
+ <div class="course-footer">
+ <div class="course-price" style="color:#1a56db">Free</div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="course-card">
+ <div class="course-thumb" style="background:#faeeda">📱</div>
+ <div class="course-body">
+ <div class="course-cat">Mobile Apps</div>
+ <div class="course-title">React Native for iOS & Android</div>
+ <div class="course-by">by Alex Turner</div>
+ <div class="course-footer">
+ <div class="course-price">Nrs8400 <span class="old">Nrs18900</span></div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="course-card">
+ <div class="course-thumb" style="background:#fcebeb">🔐</div>
+ <div class="course-body">
+ <div class="course-cat">Cybersecurity</div>
+ <div class="course-title">Ethical Hacking Full Course</div>
+ <div class="course-by">by Nadia Petrov</div>
+ <div class="course-footer">
+ <div class="course-price">Nrs9900 <span class="old">Nrs19000</span></div>
+ <button class="course-btn">Enroll</button>
+ </div>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
+</div>
+ 
+<!-- FOOTER -->
+<footer>
+ <p style="margin-bottom:12px">
+ <a href="#">Home</a>
+ <a href="#">Courses</a>
+ <a href="#">About</a>
+ <a href="#">Contact</a>
+ <a href="#">Privacy</a>
+ </p>
+ <p>© 2026 LearnHub. All rights reserved.</p>
+</footer>
+ 
+</body>
+</html>
